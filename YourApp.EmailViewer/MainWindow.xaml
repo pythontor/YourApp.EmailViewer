@@ -1,0 +1,43 @@
+﻿<Window x:Class="YourApp.EmailViewer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Email Viewer" Height="600" Width="800">
+    <Grid>
+        <!-- Заголовок приложения -->
+        <TextBlock Text="YourApp Email Viewer" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="24" Margin="10"/>
+
+        <!-- Панель для кнопок и контента -->
+        <StackPanel Margin="10" VerticalAlignment="Center">
+
+            <!-- Кнопки для действий -->
+            <StackPanel Orientation="Horizontal" Margin="0,10">
+                <!-- Кнопка для получения почты -->
+                <Button Content="Получить почту" Width="120" Height="30" Margin="5"/>
+
+                <!-- Кнопка для отправки нового письма -->
+                <Button Content="Новое письмо" Width="120" Height="30" Margin="5"/>
+            </StackPanel>
+
+            <!-- Список писем -->
+            <ListView Name="emailListView" Height="350">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Отправитель" Width="200"/>
+                        <GridViewColumn Header="Тема" Width="400"/>
+                        <GridViewColumn Header="Дата" Width="150"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+
+            <!-- Панель для отображения содержания письма -->
+            <StackPanel Name="emailContentPanel" Margin="0,10" Visibility="Collapsed">
+                <TextBlock Text="Письмо от:" FontSize="18"/>
+                <TextBlock Name="senderText" FontSize="16"/>
+                <TextBlock Text="Тема:" FontSize="18" Margin="0,10,0,0"/>
+                <TextBlock Name="subjectText" FontSize="16"/>
+                <TextBlock Text="Содержание:" FontSize="18" Margin="0,10,0,0"/>
+                <TextBox Name="emailContent" Height="200" VerticalScrollBarVisibility="Auto" IsReadOnly="True"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

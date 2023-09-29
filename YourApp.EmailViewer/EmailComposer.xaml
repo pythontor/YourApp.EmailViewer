@@ -1,0 +1,24 @@
+﻿<Page x:Class="YourApp.EmailViewer.EmailComposer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Email Composer" Height="400" Width="600">
+    <Grid>
+        <!-- Заголовок окна -->
+        <TextBlock Text="Создать новое письмо" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="24" Margin="10"/>
+
+        <!-- Панель для ввода информации -->
+        <StackPanel Margin="10">
+            <TextBlock Text="Кому:" FontSize="18"/>
+            <TextBox Name="recipientTextBox" Height="30" Margin="0,5"/>
+
+            <TextBlock Text="Тема:" FontSize="18" Margin="0,10,0,0"/>
+            <TextBox Name="subjectTextBox" Height="30" Margin="0,5"/>
+
+            <TextBlock Text="Сообщение:" FontSize="18" Margin="0,10,0,0"/>
+            <TextBox Name="messageTextBox" Height="150" VerticalScrollBarVisibility="Auto" Margin="0,5"/>
+
+            <!-- Кнопка для отправки письма -->
+            <Button Content="Отправить" Width="100" Height="30" Margin="0,10" Click="SendEmailButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>
